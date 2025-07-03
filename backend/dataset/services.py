@@ -12,7 +12,7 @@ from math import ceil
 
 from motor.motor_asyncio import AsyncIOMotorClient
 
-client = AsyncIOMotorClient("mongodb://localhost:27017")
+client = AsyncIOMotorClient("mongodb://mongo:27017")
 db = client.yolo
 dataset_collection = db.datasets
 
