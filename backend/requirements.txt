@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pymongo
+motor
+google-cloud-storage
+python-multipart
