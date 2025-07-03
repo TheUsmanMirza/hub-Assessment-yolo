@@ -203,6 +203,7 @@ yarn-error.log*
 next-env.d.ts
 Collapse
 .next/
+node_modules/
 
 
 

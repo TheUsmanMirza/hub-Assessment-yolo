@@ -28,6 +28,20 @@ export class DatasetAPI {
 
     return response.json();
   }
+    static async getPaginatedImages(datasetName: string, page: number): Promise<{
+        images: ImageData[];
+        total_pages: number;
+        total_images: number;
+        current_page: number;
+    }> {
+        const response = await fetch(`${API_BASE_URL}/datasets/${datasetName}/images?page=${page}`);
+
+        if (!response.ok) {
+        throw new Error(`Failed to fetch images: ${response.statusText}`);
+        }
+
+        return response.json();
+    }
 
   static async getDatasetImages(datasetName: string): Promise<ImageData[]> {
     const response = await fetch(`${API_BASE_URL}/datasets/${datasetName}/images`);
@@ -40,7 +54,6 @@ export class DatasetAPI {
   }
 
   static getImageUrl(datasetName: string, imageName: string): string {
-    // Use the frontend's image proxy API to avoid CORS issues
-    return `/api/images/datasets/${datasetName}/image/${imageName}`;
+    return `${API_BASE_URL}/datasets/${datasetName}/image/${imageName}`;
   }
-} 
+}

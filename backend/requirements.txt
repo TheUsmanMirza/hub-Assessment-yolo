@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-pymongo
-motor
+motor>=3.3,<4
 google-cloud-storage
 python-multipart
+aiofiles
